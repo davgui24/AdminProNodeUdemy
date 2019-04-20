@@ -8,7 +8,12 @@ const bodyParser = require('body-parser');
 //6. importar rutas
 const appRoutes = require('./routes/app');
 const usuarioRoutes = require('./routes/usuario');
+const medicoRoutes = require('./routes/medico');
+const hospitalRoutes = require('./routes/hospital');
 const loginRoutes = require('./routes/login');
+const busquedaRoutes = require('./routes/busqueda');
+const uploadRoutes = require('./routes/upload');
+const imagenRoutes = require('./routes/imagenes');
 
 
 
@@ -40,6 +45,12 @@ app.use(bodyParser.json())
 //7. Rutas
 app.use('/usuario', usuarioRoutes);
 app.use('/login', loginRoutes);
+app.use('/hospital', hospitalRoutes);
+app.use('/medico', medicoRoutes);
+app.use('/medico', medicoRoutes);
+app.use('/busqueda', busquedaRoutes);
+app.use('/upload', uploadRoutes);
+app.use('/img', imagenRoutes);
 app.use('/', appRoutes);
 
 
