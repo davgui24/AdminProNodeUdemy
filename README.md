@@ -15,3 +15,7 @@ los metodos de actualizar, eleiminar y crear requieren de un token en la url.
 
 
 ejecutar ```npm install```
+
+
+## Dentro del proyecto esta el proyecto "google-signin"
+Esto es para probar la autenticación (un frontend) de Google en el backend server
