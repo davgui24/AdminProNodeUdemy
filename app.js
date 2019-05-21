@@ -6,6 +6,7 @@ const cors = require('cors');
 
 
 
+
 //6. importar rutas
 const appRoutes = require('./routes/app');
 const usuarioRoutes = require('./routes/usuario');
@@ -27,10 +28,10 @@ const app = express();
 app.use(cors());
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
+    next();
 });
 
 
@@ -83,8 +84,12 @@ mongoose.connect('mongodb://localhost:27017/hospitalDB', (err, res) => {
 
 
 
+// Asignando puerto de producción
+const port = process.env.PORT || 3000;
+
+
 //3. Escucuchar peticiones
 // : \x1b[32m % s\x1b[0m  --> para que la palabra "online" se coloque en verde
-app.listen(3000, () => {
-    console.log('Express server, puerto 3000: \x1b[32m%s\x1b[0m', ' online');
+app.listen(port, () => {
+    console.log(`Express server, puerto ${ port }: \x1b[32m%s\x1b[0m`, ' online');
 });
