@@ -87,7 +87,6 @@ mongoose.connect('mongodb://localhost:27017/hospitalDB', (err, res) => {
 // Asignando puerto de producción
 const port = process.env.PORT || 3000;
 
-
 //3. Escucuchar peticiones
 // : \x1b[32m % s\x1b[0m  --> para que la palabra "online" se coloque en verde
 app.listen(port, () => {
